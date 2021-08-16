@@ -1,0 +1,526 @@
+@import "partials/mixins";
+@import "partials/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+  }
+}
+
+section.nav-bar {
+  background-color: $violet;
+
+  nav {
+    @include flex;
+    @include align-center;
+    @include mx-auto;
+    justify-content: space-between;
+
+    img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    ul {
+      @include flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+
+      li {
+        a {
+          text-decoration: none;
+          color: $pure;
+          @include poppin(400);
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+section.header {
+  height: 400px;
+  position: relative;
+  background-color: $dark;
+  z-index: 1;
+
+  div.image-notes {
+    position: relative;
+    left: 12%;
+    top: 41%;
+
+    img {
+      position: absolute;
+      height: 280px;
+    }
+
+    img.photo2,
+    img.photo3 {
+      width: 220px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    img.photo1 {
+      left: 10rem;
+      top: -8rem;
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    }
+
+    img.photo2 {
+      left: 5rem;
+      top: -4rem;
+    }
+
+    img.photo0 {
+      left: 17rem;
+      top: -9rem;
+      transform-origin: top;
+      transform: rotate(-35deg);
+    }
+  }
+
+  div.side-title {
+    position: absolute;
+    width: 400px;
+    word-wrap: break-word;
+    right: 5rem;
+    top: 8rem;
+    color: $pure;
+
+    h1 {
+      @include poppin(600);
+      font-size: 3.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      @include poppin(300);
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  div.blend-box {
+    position: absolute;
+    bottom: -10rem;
+    height: 200px;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+      180deg,
+      rgba(23, 32, 42, 1),
+      rgba(23, 32, 42, 0.99),
+      rgba(23, 32, 42, 0.7),
+      rgba(23, 32, 42, 0.2),
+      $pure
+    );
+  }
+}
+
+section.body-container {
+  height: 50vh;
+  margin-top: 2rem;
+  padding-top: 5rem;
+  background-color: $pure;
+
+  div.btn-container {
+    @include mx-auto;
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    margin-top: 8rem;
+
+    div:not(:last-child) {
+      margin-right: 10rem;
+    }
+
+    div.add-new,
+    div.get-exist {
+      display: grid;
+      place-items: center;
+      width: 30%;
+      height: 40vh;
+      background-image: linear-gradient(to right, #d4145a, #fbb03b);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+      button {
+        padding: 0.5rem 1.75rem;
+        margin-top: -8rem;
+        font-size: 1.25rem;
+        color: $secondary;
+        @include poppin(500);
+        background-color: $primary;
+        border: 1px solid $primary;
+        transition: all 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        &:hover {
+          color: $pure;
+          border-color: #d3aa09;
+        }
+      }
+    }
+
+    div.add-new {
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    div.get-exist {
+      border-bottom-right-radius: 30px;
+      border-top-left-radius: 30px;
+    }
+  }
+}
+
+section.footer {
+  margin-top: 15rem;
+  clip-path: polygon(70% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: $violet;
+
+  div.footer-links {
+    @include flex;
+    padding: 5rem 2rem 0rem 2rem;
+    justify-content: space-between;
+
+    div.quick-links,
+    div.follow-us,
+    div.about-us {
+      @include flex;
+      flex-direction: column;
+      @include align-center;
+      color: $pure;
+
+      h4 {
+        @include poppin(600);
+        font-size: 1.05rem;
+        padding: 0.75rem 5rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid $primary;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          @include poppin(300);
+          font-size: 0.85rem;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:not(:last-child) {
+            margin-bottom: 0.75rem;
+          }
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    div.follow-us {
+      ul.follow-links {
+        li {
+          @include flex;
+          @include align-center;
+
+          color: $pure;
+          img {
+            height: 15px;
+            width: 15px;
+            margin-right: 0.75rem;
+          }
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    div.about-us {
+      width: 30%;
+
+      h4 {
+        @include text-center;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+
+      h6 {
+        @include text-center;
+        @include poppin(300);
+        font-size: 0.85rem;
+        word-wrap: break-word;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        @include poppin(400);
+        letter-spacing: 0.4px;
+        transition: all 0.4s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+          background-color: $secondary;
+          color: $pure;
+        }
+      }
+    }
+  }
+
+  div.copyright {
+    margin-top: 5rem;
+    padding: 0.25rem 0;
+    background-color: $secondary;
+    @include text-center;
+
+    p {
+      @include poppin(300);
+      letter-spacing: 0.5px;
+      font-size: 0.65rem;
+      color: $pure;
+
+      span {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/*-----------------------second page---------------------------------*/
+.strike {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+  text-decoration-color: $violet;
+}
+
+section.main-body {
+  @include flex;
+  @include align-center;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  div.container {
+    h1 {
+      @include poppin(600);
+      @include text-center;
+      font-size: 2.75rem;
+      margin-bottom: 2rem;
+    }
+
+    div.notepad-container {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      background-color: $pure;
+      padding: 2rem;
+
+      h4 {
+        @include poppin(400);
+        text-align: right;
+        margin-bottom: 3rem;
+      }
+
+      div.notepad {
+        ul {
+          list-style: none;
+
+          li {
+            @include flex;
+            @include align-center;
+            margin-bottom: 2rem;
+
+            input {
+              margin-right: 1rem;
+              height: 1rem;
+              width: 1rem;
+            }
+
+            p {
+              @include poppin(300);
+              font-size: 1.25rem;
+            }
+          }
+        }
+
+        form {
+          @include flex;
+          @include justify-center;
+          margin-bottom: 1rem;
+
+          input {
+            border: 1px solid transparent;
+            border-bottom-color: $dark;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            outline: none;
+            flex: 1;
+          }
+
+          button {
+            @include poppin(600);
+            font-size: 1.25rem;
+            background-color: $primary;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 1px solid transparent;
+
+            &:hover {
+              background-color: #be9903;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------Popup box---------------------------*/
+.scale {
+  transform: translate(-50%, -50%) scale(1) !important;
+}
+
+section.body-container {
+  div.popup {
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease;
+    position: fixed;
+    z-index: 99;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    div.popup-box,
+    form {
+      @include flex;
+      @include justify-center;
+      flex-direction: column;
+    }
+
+    div.popup-box {
+      width: 35%;
+      padding: 2rem;
+      background-color: $pure;
+      position: relative;
+
+      button.close {
+        cursor: pointer;
+        color: $pure;
+        width: fit-content;
+        padding: 0.25rem 0.45rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        margin-left: 90%;
+        background-color: $danger;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+          background-color: #cb4335;
+        }
+      }
+
+      form {
+        input[type="text"] {
+          border: 1px solid transparent;
+          border-bottom-color: $dark;
+          outline: none;
+          @include poppin(300);
+          font-size: 1.1rem;
+          padding-left: 0.5rem;
+          margin-bottom: 1.2rem;
+          height: 2rem;
+        }
+
+        span {
+          @include poppin(400);
+          @include flex;
+          @include align-center;
+          font-size: 1rem;
+          margin-bottom: 2rem;
+
+          input[type="checkbox"] {
+            height: 0.85rem;
+            width: 0.85rem;
+            margin-right: 0.75rem;
+          }
+        }
+
+        button {
+          @include poppin(400);
+          padding: 0.45rem;
+          font-size: 1rem;
+          cursor: pointer;
+          margin-bottom: 1rem;
+          transition: all 0.3s ease;
+          background-color: $ternary;
+          border: 1px solid transparent;
+
+          &:hover {
+            background-color: #239b56;
+          }
+        }
+
+        p.alert-msg {
+          @include flex;
+          color: $danger;
+          position: absolute;
+          bottom: 0.75rem;
+
+          span {
+            font-family: inherit;
+          }
+        }
+      }
+    }
+  }
+}

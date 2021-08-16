@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/notepad-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+</head>
+<body style="background-color: #e5e7e9;">
+    <section class="nav-bar">
+        <nav class="container">
+            <img src="../images/logo.png" alt="logo" />
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Service</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="main-body">
+        <div class="container">
+            <h1 id="listName"></h1>
+            <div class="notepad-container">
+                <h4 id="dateId"></h4>
+                <div class="notepad">
+                    <ul id="taskBox">
+                        <!-- <li>
+                            <input type="checkbox" class="one" />
+                            <p>Have to compelete coding</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="two" />
+                            <p>Taking bathe</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="three" />
+                            <p>Got to do some dips</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="four" />
+                            <p>Need to go outside for a walk</p>
+                        </li> -->
+                    </ul>
+
+                    <form id="formSubmit">
+                        <input type="text" class="taskInp" />
+                        <button type="submit">+</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-links">
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul class="links">
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Products</li>
+                    <li>Services</li>
+                    <li>Contact us</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+    
+            <div class="follow-us">
+                <h4>Follow Us</h4>
+                <ul class="follow-links">
+                    <li>
+                        <img src="../images/facebook-f-brands.svg" alt="fb" />
+                        Facebook
+                    </li>
+                    <li>
+                        <img src="../images/twitter-brands.svg" alt="twitter" />
+                        Twitter
+                    </li>
+                    <li>
+                        <img src="../images/google-plus-g-brands.svg" alt="g+" />
+                        Google+
+                    </li>
+                    <li>
+                        <img src="../images/instagram-brands.svg" alt="instagram" />
+                        Instagram
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="about-us">
+                <h4>About Us</h4>
+                <h6>
+                    It was popularised in the 1960 with the release of latest sheets containing Lorem ipsum passage.
+                </h6>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2020 All rights reserved by <span>JituBoss</span></p>
+        </div>
+    </section>
+</body>
+<script type="module" src="../js/todoList.js"></script>
+</html>

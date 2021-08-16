@@ -1,0 +1,26 @@
+@import "partials/variables";
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin justify-center {
+  justify-content: center;
+}
+
+@mixin align-center {
+  align-items: center;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin mx-auto {
+  margin: 0 auto;
+}
+
+@mixin poppin($weight) {
+  font-family: $poppin;
+  font-weight: $weight;
+}
